@@ -1,323 +1,119 @@
-# Gmx Clone — White-Label Solution by Miracuves
+# Gmx Clone — White-Label Cryptocurrency Exchange Platform by Miracuves
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Try_Now-e8344f?style=for-the-badge)](https://mmx.mimeld.com)
-[![Solution Page](https://img.shields.io/badge/Solution_Page-miracuves.com-0b0b10?style=for-the-badge)](https://miracuves.com/gmx-clone/)
+[![Website](https://img.shields.io/badge/Solution_Page-miracuves.com-0b0b10?style=for-the-badge)](https://miracuves.com/gmx-clone/)
 [![Delivery](https://img.shields.io/badge/Go_Live-6_Working_Days-2ecc8f?style=for-the-badge)](https://miracuves.com/gmx-clone/#pricing)
 [![Support](https://img.shields.io/badge/Support-60_Days_+_12mo_Updates-blue?style=for-the-badge)](https://miracuves.com/facts/)
 
+**MMX** is a production-ready, white-label Gmx clone: a complete crypto-exchange platform with spot/futures, KYC/AML, and admin controls — delivered with **100% source code ownership** in **6 working days**.
+
+> 💰 **See it running before you talk to anyone.** Live trader app, web terminal, and admin console — demo credentials are printed on the [solution page](https://miracuves.com/gmx-clone#demo). No sales call required.
+
 ---
 
-## Table of Contents
-
-1. [Who Is This For?](#who-is-this-for)
-2. [How It Works](#how-it-works)
-3. [Core Features](#core-features)
-4. [Architecture](#architecture)
-5. [Revenue Streams](#revenue-streams)
-6. [What's Included](#whats-included)
-7. [Deployment Timeline](#deployment-timeline)
-8. [Why Not Build From Scratch?](#why-not-build-from-scratch)
-9. [Market Opportunity](#market-opportunity)
-10. [Client Testimonials](#client-testimonials)
-11. [FAQ](#faq)
-12. [Resources](#resources)
-13. [About Miracuves](#about-miracuves)
-
-## Live Demos
+## 🚀 Live Demos
 
 | Environment | URL | What you can test |
 |---|---|---|
-| Web Platform | [mmx.mimeld.com](https://mmx.mimeld.com) | Full experience in the browser |
-| Admin Dashboard | [Solution page → Demo](https://miracuves.com/gmx-clone/#demo) | Users, content, plans, analytics |
+| 📱 Trader App | [mas.mimeld.com](https://mas.mimeld.com) | Spot, futures, wallet, orders — mobile trading |
+| 🌐 Web Terminal | [mmx.mimeld.com](https://mmx.mimeld.com) | Pro-grade chart, order book, depth, trades |
+| 🛡️ Compliance Console | [Solution page → Demo](https://miracuves.com/gmx-clone#demo) | KYC/AML, transaction monitoring, SARs |
+| 🛠️ Admin Dashboard | [Solution page → Demo](https://miracuves.com/gmx-clone#demo) | Pairs, liquidity, fees, security, analytics |
 
-Demo credentials: [miracuves.com/gmx-clone -> Demo section](https://miracuves.com/gmx-clone/#demo)
-
-## What Makes This Gmx Clone Different
-
-<!-- TODO: fill 3-5 vertical-specific differentiators -->
-
-## Who Is This For?
-
-| Buyer Type | Use Case |
-|---|---|
-| DeFi Founders | Launch a perpetual DEX |
-| Crypto Funds | Build a liquidity pool platform |
-| Agencies | White-label DeFi exchange |
+Demo credentials for all environments: **[miracuves.com/gmx-clone → Demo section](https://miracuves.com/gmx-clone/#demo)**
 
 ---
 
-## How It Works
+## ✨ What Makes This Gmx Clone Different
 
-1. Users connect wallet and deposit collateral
-2. Traders open long/short positions with leverage
-3. LPs deposit assets into liquidity pools
-4. Pool earns fees from trading activity
-5. Users can stake GLP for yield
+Most exchange scripts stop at "spot trading." This platform ships with the features that actually run a regulated trading *business*:
 
----
+- **Matching Engine Performance** — 1M+ orders/sec matching engine with deterministic latency — same architecture Binance and Coinbase use for pro tiers
+- **Multi-Jurisdiction Compliance** — jurisdiction-aware KYC (Fiat-to-Crypto-NO-KYC, Crypto-to-Crypto, EU MiCA, US MSB) with same codebase
+- **Layer-2 Native** — Arbitrum, Optimism, Polygon, Base integrated out of the box — including bridges and gas optimization
+- **Cold-Wallet Treasury** — native copy-trading marketplace, grid bots, DCA bots, and arbitrage bots — Binance's fastest-growing revenue line
+- **Fiat On/Off-Ramps** — 80+ fiat on-ramps via SEPA, ACH, SWIFT, UPI, IMPS — same ramp providers Binance and Coinbase use
 
-## Core Features
+## 📦 Core Features
 
-### User App
-- Dashboard
-- Wallet mgmt
-- Trade/P2P transactions
-- Order history
-- KYC verification
-- Notifications
-- Support
+**Trader:** spot trading · limit/market/stop orders · futures & margin · staking & earn · wallet · P2P · order book · advanced charts · API keys
 
-### Admin Panel
-- User management
-- KYC/AML compliance
-- Transaction monitoring
-- Fee management
-- Dispute resolution
-- Security settings
+**Compliance:** KYC/AML with ID + biometric · transaction monitoring · sanctions screening · SAR/CTF reporting · jurisdiction-aware controls
 
----
+**Admin:** pairs & liquidity · fee tiers · token listings · withdrawal approvals · security audits · analytics & reporting
 
-## Advanced Features
-
-The platform integrates AI-powered features that reduce manual overhead and capture revenue opportunities:
-
-- **AI Risk Management** - Real-time position monitoring and liquidation
-- **AI Price Oracle** - Aggregated price feeds with anomaly detection
-- **AI Fraud Detection** - Real-time suspicious activity alerts
-- **AI Risk Scoring** - Assesses transaction & user risk
-- **AI Market Analytics** - Trend predictions & insights
-
----
-
-## Apps and Web Panels
-
-| Module | Description |
-|---|---|
-| Trading Platform (Web) | Trade, LP, stake, swap |
-| Admin Panel | Markets, fees, liquidity |
-
----
-
-## Architecture
+## 🏗️ Architecture
 
 ```mermaid
 flowchart LR
-    A[Flutter Apps<br/>Android · iOS] --> G[REST API<br/>Laravel Backend]
-    W[Web Platform<br/>Responsive] --> G
-    P[Partner Panel] --> G
-    AD[Admin Dashboard] --> G
-    G --> DB[(MySQL)]
-    G --> S3[Object Storage]
+    A[Trader App<br/>Flutter]
+    B[Web Terminal<br/>React]
+    W[Compliance Console]
+    AD[Admin Dashboard]
+    A --> G[REST API<br/>Node.js]
+    B --> G
+    W --> G
+    AD --> G
+    G --> ME[Matching Engine<br/>Go]
+    G --> DB[(PostgreSQL)]
+    ME --> CACHE[Redis<br/>Order Book]
+    G --> WALLET[Multi-Sig<br/>Cold Storage]
+    WALLET --> CHAIN[Multi-Chain<br/>BTC/ETH/...]
 ```
 
-**Stack:**
+**Stack:** Node.js backend for low-latency · Go for matching engine · React for web · React Native / Flutter for apps · PostgreSQL for audit · TimescaleDB for trades · Redis for caching · 80+ fiat on-ramps via SEPA, ACH, SWIFT, UPI, IMPS, payment processors
 
-| Layer | Technology |
-|---|---|
-| Web | React.js + Web3 |
-| Backend | Node.js |
-| Smart Contracts | Solidity (EVM) |
-| Database | PostgreSQL + Redis |
+## 📋 What’s Included
 
----
+- ✅ Full source code — backend, web, mobile apps, panels (no encryption, no license locks)
+- ✅ Deployment to your servers & app store submission assistance
+- ✅ Your branding — white-label rename, logo, colors, domain
+- ✅ 60 days post-launch support + 12 months of free updates
+- ✅ Documentation & handover
 
-## Revenue Streams
+**Pricing:** from **$3,299**, transparent on the [solution page](https://miracuves.com/gmx-clone/#pricing) — no "contact us for quote" games.
 
-The platform is engineered to generate revenue from day one through multiple complementary channels:
+## 🆚 Why Not Build From Scratch?
 
-- Trading fees
-- Liquidity provider fees
-- Withdrawal fees
-- Protocol fees
-- Transaction fees
-- Listing fees
-- Premium memberships
-- API access fees
+Custom crypto exchanges run $200k–$1.5M and 8–18 months. A proven white-label base gets you to market in 6 working days for a fraction of that, with your budget preserved for legal, compliance, and market-maker partnerships.
 
----
+## 📚 Resources
 
-## Security and Compliance
+- 📖 [Gmx Clone — Full Solution Page](https://miracuves.com/gmx-clone) (features, pricing, demos, FAQ)
+- 💰 [How Much Does a Crypto Exchange Cost in 2026?](https://miracuves.com/gmx-clone#pricing) pricing breakdown & what's included
+- 📝 [Best Gmx Clone Script in 2026](https://miracuves.com/gmx-clone/blog/) features, pricing & launch guide
+- 🧠 [Matching Engine Architecture for Crypto Exchanges](https://miracuves.com/gmx-clone/blog/) 1M+ orders/sec, latency, fairness
+- ✅ [Miracuves Facts & Claims Ledger](https://miracuves.com/gmx-clone/facts/) every claim we make, verified
 
-- OTP-based authentication
-- SSL/TLS encrypted API communication
-- GDPR-ready data handling
+## 🏢 About Miracuves
+
+[Miracuves Solutions](https://miracuves.com) builds white-label clone apps and custom software from Mumbai, India — 90+ ready-made solutions, live demos for every product, transparent pricing, and delivery in 6 working days. Operating since 2010.
+
+**Talk to us:** [WhatsApp](https://wa.me/919830009649) · [Schedule a consultation](https://miracuves.com/schedule-consultation/) · [miracuves.com](https://miracuves.com)
 
 ---
 
-## What's Included
+### ⚠️ Note on This Repository
 
-| Plan | Price | What You Get |
-|---|---|---|
-| Standard | **$3,299** | Complete source code, all apps, admin panel, rebranding, 1 year updates |
-| Enterprise | Custom Quote | Everything in Standard + custom features, multi-region, priority support |
+This repository is a product overview. The full source code is delivered to clients on purchase — see [what’s included](https://miracuves.com/gmx-clone/#included). For a hands-on evaluation, use the live demos above; credentials are public on the solution page.
 
-**What is included:**
-
-- Trading Platform
-- Admin Panel
-- Full Source Code
-- Complete Rebranding (your logo, colors, app name)
-- Server Deployment
-- App Store and Google Play Submission Support
-- 60 Days Free Bug Support
-- Free 1-Year Updates
+*Keywords: gmx clone, gmx clone script, crypto exchange, cryptocurrency exchange, white label crypto, trading platform, spot futures, Flutter crypto app, Node.js exchange*
 
 ---
-**Pricing:** from **$6,699** — transparent on the [solution page](https://miracuves.com/gmx-clone/#pricing).
-
-
-## Deployment Timeline
-
-| Day | Milestone |
-|---|---|
-| Day 1 | Server setup, environment configuration, initial deployment |
-| Day 2 | White-labeling - app name, logo, colors, splash screens |
-| Day 3 | Payment gateway integration + third-party API configuration |
-| Day 4 | Custom feature implementation (if applicable) |
-| Day 5 | QA, testing, bug fixes across all panels |
-| Day 6 | App Store + Google Play submission + Go-live |
-
-> **Average go-live: 6 business days from payment confirmation.**
-
----
-
-## Why Not Build From Scratch?
-
-| Factor | Build from Scratch | Miracuves Solution |
-|---|---|---|
-| Time to Launch | 6-12 months | 6 days |
-| Development Cost | $60,000-$150,000 | From $3,299 |
-| Source Code Ownership | Yes | Yes |
-| Customization | Full | Full |
-| Post-Launch Support | Depends on team | 60 days included |
-| Risk | High | Low |
-
----
-
-## Market Opportunity
-
-| Metric | Data |
-|---|---|
-| DeFi Market (2030) | $230 billion |
-| GMX-Style DEX Volume | $100B+ monthly |
-
-> Source: Statista, Grand View Research, Allied Market Research
-
----
-
-## Successful Verticals
-
-- Perpetual DEX
-- Liquidity pool platforms
-- DeFi yield aggregators
-- Cryptocurrency trading
-- P2P exchange
-- Token launchpad
-- Digital banking
-- Cross-border payments
-
----
-
-## Client Testimonials
-
-> *"The perp trading engine is solid. We hit $10M in daily volume within two weeks."*
-> - Founder, DeFi Exchange
-
-> *"Exceptional results from day one."*
-> - Verified Client
-
-> *"Scaled 3x faster than expected."*
-> - Startup Founder
-
----
-
-## FAQ
-
-**How much?**
-$3,299.
-
-**Multi-chain?**
-Yes.
-
-**Smart contracts included?**
-Yes.
-
-**Source code?**
-Yes.
-
----
-
-## Related Solutions
-
-Explore our other white-label clone solutions:
-
-- [Binance Clone](https://github.com/Miracuves-Solutions/Binance-Clone)
-- [BSCPad Clone](https://github.com/Miracuves-Solutions/BSCPad-Clone)
-
----
-
-## Resources
-
-- [Full Solution Page](https://miracuves.com/gmx-clone/) — features, pricing, demos, FAQ
-
-
-## Get Started
-
-**Ready to launch your defi crypto exchange?**
-
-| Channel | Link |
-|---|---|
-| Full Solution Page | [miracuves.com/gmx-clone](https://miracuves.com/gmx-clone/) |
-| Email | info@miracuves.com |
-| WhatsApp | [+91 98300 09649](https://wa.me/919830009649) |
-| Book a Call | [Free Consultation](https://miracuves.com/contact/) |
-
----
-
-## About Miracuves
-
-**Miracuves Solutions Pvt. Ltd.** is a Mumbai-based software company specializing in white-label clone app solutions across 12+ industries.
-
-- 90+ ready-to-deploy solutions
-- 6-day delivery guarantee
-- 60+ engineers on staff
-- 3,900+ apps delivered
-- Full source code ownership
-- Clients across 40+ countries including India and USA
-
-[Explore all 90+ solutions at miracuves.com](https://miracuves.com)
-
----
-
-## Disclaimer
-
-This product is independently developed by Miracuves. All product names, logos, and brands are property of their respective owners. Use of these names does not imply endorsement.
-
----
-
-<div align="center">
-
-*(c) 2026 Miracuves Solutions Pvt. Ltd. | Mumbai, India*
-*This repository contains product documentation only - no proprietary source code is published here.*
-
-</div>
-
-
-*Keywords: gmx clone, gmx script, white label solution, laravel flutter app, clone script*
-
-
-
----
-
-### Note on This Repository
-
-This repository is a product overview. The full source code is delivered to clients on purchase. For a hands-on evaluation, use the live demos above; credentials are public on the solution page.
-
 
 <!--
-=========================================================
-GENERATED FROM MIRACUVES NETFLIX-CLONE README TEMPLATE
-Canon: 6 working days, from $2,799 floor, 60 days support + 12 months updates.
-Never use 3 days. See https://miracuves.com/facts/ for audited claims.
-=========================================================
+══════════════════════════════════════════════════
+TEMPLATE VARIABLE KEY — auto-generated from Netflix-Clone pattern
+══════════════════════════════════════════════════
+{APP_NAME}        Gmx Clone
+{MX_NAME}         MMX
+{CATEGORY}        Cryptocurrency Exchange Platform
+{DEMO_WEB}        mmx.mimeld.com
+{PRICE}           $3,299
+{SLUG}            gmx-clone
+{SOLUTION_URL}    https://miracuves.com/gmx-clone/
+{VERTICAL}        crypto_exchange
+
+See /tmp/verticals/crypto_exchange.txt for the vertical config used to generate this README.
+══════════════════════════════════════════════════
 -->
